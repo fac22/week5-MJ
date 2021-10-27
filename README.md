@@ -18,3 +18,7 @@ Make it look great
 
 Co-authored-by: Mohamed <76549147+Alisyad9@users.noreply.github.com>
 Co-authored-by: jijip41 <78619809+jijip41@users.noreply.github.com>
+
+## Planning
+
+<img width="1277" alt="planning_project" src="https://user-images.githubusercontent.com/78619809/139054521-33e2446f-6c12-4cc1-8ba5-a91452c27c6f.png">
