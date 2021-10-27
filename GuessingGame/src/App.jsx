@@ -49,7 +49,7 @@ function App() {
       </header>
       <main>
         <div>
-          {followers.map((follower) => (
+          {[].map((follower) => (
             <img
               src={follower.avatar_url}
               alt=""
