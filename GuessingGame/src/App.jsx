@@ -1,72 +1,24 @@
 import React from 'react';
-import './App.css';
+import PriceFilter from './PriceFilter.jsx';
+import DishList from './DishList.jsx';
 
-{
-  /* <img src={user.avatar_url} alt="" width="128" height="128" /> */
-}
-{
-  /* <ReposList url={user.repos_url} /> */
-}
 function App() {
-  const [user, setUser] = React.useState('');
-  const [followers, setFollowers] = React.useState('');
-  // const [data, getData] = React.uuseState('Alisyad');
-
-  const url = 'https://api.github.com/users/';
-
-  React.useEffect(() => {
-    fetch(url + 'jijip41')
-      .then((res) => res.json())
-      .then((data) => setUser(data));
-  }, []);
-
-  console.log(user);
-  // if(!user) return <div>Loading...</div>
-
-  React.useEffect(() => {
-    fetch(url + 'jijip41/followers')
-      .then((res) => res.json())
-      .then((data) => setFollowers(data));
-  }, []);
-
-  // const followers = url + 'jijip41/followers';
-  console.log({ followers });
-  console.log({ user });
+  const [min, setMin] = React.useState(0);
+  const [max, setMax] = React.useState(9);
 
   return (
-    <section>
-      <header>
+    <main>
+      <section className="filters">
+        <h1>Burger Place</h1>
         <form>
-          <p>{user.name}</p>
-          <label>User name</label>
-          <input />
+          <PriceFilter min={min} max={max} setMin={setMin} setMax={setMax} />
         </form>
-
-        <div>
-          <p>Points:</p>
-          <p>Timer</p>
-        </div>
-      </header>
-      <main>
-        <div>
-          {[].map((follower) => (
-            <img
-              src={follower.avatar_url}
-              alt=""
-              width="128"
-              height="128"
-              key={follower.id}
-            />
-          ))}
-        </div>
-        <div>
-          <form>
-            <label>Guess Username</label>
-            <input />
-          </form>
-        </div>
-      </main>
-    </section>
+      </section>
+      <section className="dishes">
+        <h2>Dishes</h2>
+        <DishList max={max} min={min} />
+      </section>
+    </main>
   );
 }
 
