@@ -9,7 +9,11 @@ export default function GetFollowers(props) {
     fetch(url + props.name + '/followers')
       .then((res) => res.json())
       .then((data) => setFollowers(data));
+<<<<<<< HEAD
   },[props.name] );
+=======
+  }, [props.name]);
+>>>>>>> trying to create score function, add refresh button
 
   React.useEffect(() => {
     if (followers) {
@@ -64,6 +68,7 @@ export default function GetFollowers(props) {
 
         {followers
           .filter(
+<<<<<<< HEAD
             (follower) => 
             // followersList.include(follower.login)
             follower.login === props.guess || followersList.includes(follower.login)
@@ -80,6 +85,26 @@ export default function GetFollowers(props) {
             id={follower.id + ''}
           />
         ))}
+=======
+            (follower) =>
+              // followersList.include(follower.login)
+              follower.login === props.guess ||
+              followersList.includes(follower.login)
+            // )
+            // followersList.includes(follower.login))
+          )
+          .map((follower) => (
+            <img
+              src={follower.avatar_url}
+              alt=""
+              width="128"
+              height="128"
+              className="follower-img"
+              key={follower.id}
+              id={follower.id + ''}
+            />
+          ))}
+>>>>>>> trying to create score function, add refresh button
       </div>
     );
   }

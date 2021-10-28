@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import GetUser from './GetUser';
 import GetFollowers from './GetFollowers';
+
 import { Timer, Score } from './Dashboard';
 
 function App() {
@@ -17,38 +18,45 @@ function App() {
   return (
     <section>
       <header>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setUser(e.target.username.value);
-          }}
-        >
-          <h2>
-            <GetUser name={user} />
-          </h2>
-          <label>User name</label>
-          <input
-            type="search"
-            aria-label="Search users"
-            placeholder="Search users"
-            name="username"
-          />
-        </form>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setGuess(e.target.guess.value);
-          }}
-        >
-          <label>Guess your follower</label>
+        <section className="flex-row">
+          <div>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setUser(e.target.username.value);
+              }}
+            >
+              <h2>
+                <GetUser name={user} />
+              </h2>
+              <label>User name</label>
+              <input
+                type="search"
+                aria-label="Search users"
+                placeholder="Search users"
+                name="username"
+              />
+            </form>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setGuess(e.target.guess.value);
+              }}
+            >
+              <label>Guess your follower</label>
 
-          <input
-            type="search"
-            aria-label="Search users"
-            placeholder="Guess your follower"
-            name="guess"
-          />
-        </form>
+              <input
+                type="search"
+                aria-label="Search users"
+                placeholder="Guess your follower"
+                name="guess"
+              />
+            </form>
+          </div>
+          <div>
+            <a href="/">Refresh</a>
+          </div>
+        </section>
         <div>
           <Score guess={guessWord} name={user} />
           <Timer />

@@ -1,4 +1,5 @@
 import React from 'react';
+import followersList from './Data';
 
 function Timer() {
   const [time, setTime] = React.useState(60);
@@ -22,26 +23,42 @@ function Timer() {
   }, [time]);
 
   return (
-    <div class="flex-row">
+    <div className="flex-row">
       <p>Time</p>
-      <div class="round">{time}</div>
+      <div className="round">{time}</div>
     </div>
   );
 }
 
-const followersImgs = document.querySelectorAll('.follower-img');
-console.log(followersImgs);
-
 function Score(props) {
   const [score, setScore] = React.useState(0);
-  const [followers, setFollowers] = React.useState('');
+  const [value, setValue] = React.useState('');
 
-  return (
-    <div class="flex-row">
-      <p>Points</p>
-      <div class="round">{score}</div>
-    </div>
-  );
+  console.log(followersList);
+  React.useEffect(() => {
+    setValue(props.guess);
+  }, []);
+
+  function checkFollower(val) {
+    return followersList.includes(val);
+  }
+
+  if (checkFollower(value)) {
+    setScore(score + 10);
+    return (
+      <div className="flex-row">
+        <p>Points</p>
+        <div className="round">{score}</div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="flex-row">
+        <p>Points</p>
+        <div className="round">{score}</div>
+      </div>
+    );
+  }
 }
 
 export { Timer, Score };

@@ -15,7 +15,7 @@ export default function GetUser(props) {
   } else {
     return (
       <div>
-        <h2 class="user">
+        <h2 className="user">
           <img src={userName.avatar_url} alt="" width="30" height="30" />
           {userName.login}
         </h2>
