@@ -19,6 +19,12 @@ body {
   margin: 2rem;
   border-radius: 50px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  cursor: pointer;
+  transition: transform 250ms ease-in;
+}
+
+.follower-img:hover {
+  transform: translateY(-10px);
 }
 
 input {
@@ -54,4 +60,26 @@ input:focus {
 
 .user > h2 {
   margin-left: 2rem;
+}
+
+.refresh {
+  background-color: var(--purple);
+  color: var(--light-yellow);
+  width: 4rem;
+  height: 4rem;
+  padding: 2rem;
+  margin-left: 3rem;
+  border-radius: 50px;
+  align-items: end;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  text-decoration: none;
+}
+
+.refresh:visited {
+  background-color: var(--purple);
+  color: var(--light-yellow);
+}
+
+.refresh:hover {
+  transform: scale(1.1);
 }

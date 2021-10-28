@@ -54,7 +54,9 @@ function App() {
             </form>
           </div>
           <div>
-            <a href="/">Refresh</a>
+            <a href="/" className="refresh">
+              Refresh
+            </a>
           </div>
         </section>
         <div>
