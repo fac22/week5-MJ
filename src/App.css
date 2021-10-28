@@ -5,6 +5,9 @@
   --green: #a9e5bb;
   --red: #e3170a;
 }
+h1 {
+  text-shadow: /* White glow */ 0 0 7px black, 0 0 10px #fff, 0 0 21px #fff;
+}
 
 body {
   padding: 0 3rem;
@@ -15,8 +18,40 @@ body {
 .follower-img {
   margin: 2rem;
   border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 input {
+  outline: none;
   margin-left: 3rem;
+  padding: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+input:focus {
+  background-color: var(--light-yellow);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.round {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  color: var(--red);
+  border-radius: 50px;
+  margin-left: 1rem;
+}
+
+.user > img {
+  border-radius: 50px;
+  margin-right: 2rem;
+}
+
+.user > h2 {
+  margin-left: 2rem;
 }
