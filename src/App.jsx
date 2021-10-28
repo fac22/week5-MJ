@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import GetUser from './GetUser';
-import infos from './data';
 import GetFollowers from './GetFollowers';
 import { Timer, Score } from './Dashboard';
 
@@ -24,15 +23,30 @@ function App() {
             setUser(e.target.username.value);
           }}
         >
-          <h1>
+          <h2>
             <GetUser name={user} />
-          </h1>
+          </h2>
           <label>User name</label>
           <input
             type="search"
             aria-label="Search users"
             placeholder="Search users"
             name="username"
+          />
+        </form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setGuess(e.target.guess.value);
+          }}
+        >
+          <label>Guess your follower</label>
+
+          <input
+            type="search"
+            aria-label="Search users"
+            placeholder="Guess your follower"
+            name="guess"
           />
         </form>
         <div>
@@ -44,21 +58,7 @@ function App() {
         <div>
           <GetFollowers name={user} guess={guessWord} />
         </div>
-        <div>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setGuess(e.target.guess.value);
-            }}
-          >
-            <input
-              type="search"
-              aria-label="Search users"
-              placeholder="Guess your follower"
-              name="guess"
-            />
-          </form>
-        </div>
+        <div></div>
       </main>
     </section>
   );
