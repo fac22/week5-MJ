@@ -9,7 +9,7 @@ export default function GetFollowers(props) {
     fetch(url + props.name + '/followers')
       .then((res) => res.json())
       .then((data) => setFollowers(data));
-  }, []);
+  },[props.name] );
 
   React.useEffect(() => {
     if (followers) {
@@ -62,7 +62,14 @@ export default function GetFollowers(props) {
             />
           ))} */}
 
-        {followers.map((follower) => (
+        {followers
+          .filter(
+            (follower) => 
+            // followersList.include(follower.login)
+            follower.login === props.guess || followersList.includes(follower.login)
+            // )
+            // followersList.includes(follower.login))
+          ).map((follower) => (
           <img
             src={follower.avatar_url}
             alt=""
