@@ -9,7 +9,7 @@ export default function GetFollowers(props) {
     fetch(url + props.name + '/followers')
       .then((res) => res.json())
       .then((data) => setFollowers(data));
-  }, []);
+  });
 
   React.useEffect(() => {
     if (followers) {
