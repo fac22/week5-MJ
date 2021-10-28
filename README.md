@@ -30,6 +30,13 @@ We wanted to let users to present their Github followers and then guess follower
 
 ## Screenshots
 
+### When you visit the site
+<img width="1052" alt="Screenshot 2021-10-28 at 18 08 40" src="https://user-images.githubusercontent.com/78619809/139302816-d1931872-6a8a-44e8-bb8a-39f76cec2557.png">
+
+### When you guess your followers right
+<img width="1047" alt="Screenshot 2021-10-28 at 18 10 11" src="https://user-images.githubusercontent.com/78619809/139302997-f4da3777-90f6-4214-bbb0-9a05c49d6866.png">
+
+
 ## Bugs
 
 - We spent a long time to figure out when our components didn't return anything. It was because we used `{}` after `return` with React we should use `()` to `return`.
