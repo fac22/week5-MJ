@@ -22,9 +22,9 @@ function Timer() {
   }, [time]);
 
   return (
-    <div>
+    <div class="flex-row">
       <p>Time</p>
-      <div>{time}</div>
+      <div class="round">{time}</div>
     </div>
   );
 }
@@ -37,9 +37,9 @@ function Score(props) {
   const [followers, setFollowers] = React.useState('');
 
   return (
-    <div>
+    <div class="flex-row">
       <p>Points</p>
-      <div>{score}</div>
+      <div class="round">{score}</div>
     </div>
   );
 }
