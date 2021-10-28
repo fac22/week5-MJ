@@ -1,8 +1,6 @@
 import React from 'react';
-import infos from './data';
 const url = 'https://api.github.com/users/';
-
-const followersList = [];
+import followersList from './Data';
 
 export default function GetFollowers(props) {
   const [followers, setFollowers] = React.useState('');
@@ -11,7 +9,19 @@ export default function GetFollowers(props) {
     fetch(url + props.name + '/followers')
       .then((res) => res.json())
       .then((data) => setFollowers(data));
+  }, []);
+
+  React.useEffect(() => {
+    if (followers) {
+      followers.map((follower) => {
+        if (follower.login === props.guess) {
+          return followersList.push(props.guess);
+        }
+      });
+    }
   });
+  console.log({ followers });
+  console.log({ followersList });
 
   if (!followers) {
     return <div>Loading...</div>;
@@ -34,11 +44,11 @@ export default function GetFollowers(props) {
   } else {
     return (
       <div>
-        {followers
+        {/* {followers
           .filter(
-            (follower) =>
-              follower.login != props.guess ||
-              followersList.includes(props.guess)
+            (follower) => follower.login === followersList.includes(props.guess)
+            // )
+            // followersList.includes(follower.login))
           )
           .map((follower) => (
             <img
@@ -50,7 +60,19 @@ export default function GetFollowers(props) {
               key={follower.id}
               id={follower.id + ''}
             />
-          ))}
+          ))} */}
+
+        {followers.map((follower) => (
+          <img
+            src={follower.avatar_url}
+            alt=""
+            width="128"
+            height="128"
+            className="follower-img"
+            key={follower.id}
+            id={follower.id + ''}
+          />
+        ))}
       </div>
     );
   }
