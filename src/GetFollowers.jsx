@@ -2,6 +2,8 @@ import React from 'react';
 import infos from './data';
 const url = 'https://api.github.com/users/';
 
+const followersList = [];
+
 export default function GetFollowers(props) {
   const [followers, setFollowers] = React.useState('');
 
@@ -33,7 +35,11 @@ export default function GetFollowers(props) {
     return (
       <div>
         {followers
-          .filter((follower) => follower.login != props.guess)
+          .filter(
+            (follower) =>
+              follower.login != props.guess ||
+              followersList.includes(props.guess)
+          )
           .map((follower) => (
             <img
               src={follower.avatar_url}

@@ -9,8 +9,10 @@ function Timer() {
         setTime(time - 1);
       } else if (time === 0) {
         setTime('Time Over');
+        clearInterval(timer);
       } else {
         setTime('Time Over');
+        clearInterval(timer);
       }
     }, 1000);
 
