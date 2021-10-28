@@ -1,24 +1,44 @@
 # week5-mj
 
-## Criteria
+Team MJ
+We built 🎮 The Guessing Game 🎮 using React with Github API.
+We wanted to let users to present their Github followers and then guess followers' username on Github.👀
 
-Accept some user input (e.g. a username)
-Query an API (e.g. the Github API, or any other fun one)
-Populate the UI with API data
-Have some form of persistent state and interactivity, e.g.
-A hunger bar that decreases over time and is topped up when you feed them stars
-A button to add more users to your collection
+## Acceptance Criteria ✅
 
-## Stretch criteria
+- [x] Accept some user input (e.g. a username)
+- [x] Query an API (e.g. the Github API, or any other fun one)
+- [x] Populate the UI with API data
+- [x] Have some form of persistent state and interactivity,
 
-Save your state to localstorage so you can leave the page and come back later
-Make it look great
+## Stretch criteria 🙆‍♀️🙅‍♀️🙆🏾🙅🏾‍♂️
 
-## Co-authoring
+- [ ] Save your state to localstorage so you can leave the page and come back later
+- [x] Make it look great
 
-Co-authored-by: Mohamed <76549147+Alisyad9@users.noreply.github.com>
-Co-authored-by: jijip41 <78619809+jijip41@users.noreply.github.com>
+## User Stories
+
+- I want to get to know my followers I want to try to remember their username.
+- I want to get my username and present profile on the page so I can make sure I'm looking at my followers.
+- I would like to be able to search my followers and present them only when I get their name correct.
+- I want to have some time limit so the game can be more interesting
+- I also want to get some reward when I get my followers name correct.
 
 ## Planning
 
 <img width="1277" alt="planning_project" src="https://user-images.githubusercontent.com/78619809/139054521-33e2446f-6c12-4cc1-8ba5-a91452c27c6f.png">
+
+## Screenshots
+
+## Bugs
+
+- We spent a long time to figure out when our components didn't return anything. It was because we used `{}` after `return` with React we should use `()` to `return`.
+- When we depoloyed our app on Netlify, it didn't render our components properly. I could be we didn't have out package.josn on the top level or we had a nested directory. After relocating everything we were able to deploy out app 🥳
+- When we used `reactEffect()` to update state, we put an empty array as a second argument or put some values inside of the array. It caused a lot of problemd (e.g exceeding API limit, state is not being updated). We now know when to use empty/non empty array or just leave it empty
+
+### Handy things when we worked together
+
+### Co-authoring
+
+Co-authored-by: Mohamed <76549147+Alisyad9@users.noreply.github.com>
+Co-authored-by: jijip41 <78619809+jijip41@users.noreply.github.com>
